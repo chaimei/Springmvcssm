@@ -26,7 +26,7 @@ public class EmployeeHandler {
 	
 	
 	/**
-	 * æ˜¾ç¤ºæ‰€æœ‰å‘˜å·¥ä¿¡æ¯
+	 * ÏÔÊ¾ËùÓĞÔ±¹¤ĞÅÏ¢
 	 * @param mod
 	 * @return
 	 */
@@ -37,7 +37,7 @@ public class EmployeeHandler {
 		return "listEmps";
 	}
 	/**
-	 * å»å¾€æ·»åŠ å‘˜å·¥é¡µé¢
+	 * È¥ÍùÌí¼ÓÔ±¹¤Ò³Ãæ
 	 * @param mod
 	 * @return
 	 */
@@ -45,8 +45,8 @@ public class EmployeeHandler {
 	public String toAddEmp(Model mod) {
 		List<Department> depts = deptService.getDepts();
 		Map<String,String> map = new HashMap<>();
-		map.put("0", "å¥³");
-		map.put("1", "ç”·");
+		map.put("0", "Å®");
+		map.put("1", "ÄĞ");
 		Employee employee = new Employee();
 		
 		mod.addAttribute("genders", map);
@@ -55,7 +55,7 @@ public class EmployeeHandler {
 		return "input";
 	}
 	/**
-	 * æ·»åŠ æ“ä½œ
+	 * Ìí¼Ó²Ù×÷
 	 * @param emp
 	 * @return
 	 */
@@ -66,7 +66,7 @@ public class EmployeeHandler {
 	}
 	/**
 	 * 
-	 * å»ä¿®æ”¹é¡µé¢
+	 * È¥ĞŞ¸ÄÒ³Ãæ
 	 * @param id
 	 * @param mod
 	 * @return
@@ -74,8 +74,8 @@ public class EmployeeHandler {
 	@RequestMapping(value="/edit/{id}",method=RequestMethod.GET)
 	public String toEditEmp(@PathVariable("id") int id,Model mod) {
 		Map<String,String> map = new HashMap<>();
-		map.put("0", "å¥³");
-		map.put("1", "ç”·");
+		map.put("0", "Å®");
+		map.put("1", "ÄĞ");
 		Employee employee = empService.getEmpById(id);
 		List<Department> depts = deptService.getDepts();
 		mod.addAttribute("genders", map);
@@ -85,7 +85,7 @@ public class EmployeeHandler {
 		return "input";
 	}
 	/**
-	 * ä¿®æ”¹æ“ä½œ
+	 * ĞŞ¸Ä²Ù×÷
 	 * @param emp
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class EmployeeHandler {
 	}
 	
 	/**
-	 * åˆ é™¤æ“ä½œ
+	 * É¾³ı²Ù×÷
 	 * @param id
 	 * @return
 	 */
